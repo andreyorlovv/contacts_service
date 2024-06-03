@@ -6,11 +6,11 @@ from django_better_admin_arrayfield.models.fields import ArrayField
 class Contact(models.Model):
 
     regions = [
-        ('DVFO', 'ДВФО'),
-        ('MMO', 'Москва и МО'),
-        ('PFO', 'ПФО'),
+        ('DVFO', 'ДВФО'),#
+        ('MMO', 'Москва и МО'),#
+        ('PFO', 'ПФО'),#
         ('SZFO', 'СЗФО'),
-        ('SKFO', 'СКФО'),
+        ('SKFO', 'СКФО'),#
         ('SFO', 'СФО'),
         ('UFO', 'УФО'),
         ('CFO', 'ЦФО'),
@@ -18,7 +18,7 @@ class Contact(models.Model):
     ]
 
     title = models.CharField(max_length=255, verbose_name='Название')
-    inn = models.PositiveBigIntegerField(verbose_name='ИНН', unique=True)
+    inn = models.PositiveBigIntegerField(verbose_name='ИНН')
     kpp = models.CharField(max_length=255, null=True, blank=True, verbose_name='КПП')
 
     region = models.CharField(choices=regions, null=True, blank=True, max_length=255, verbose_name='Федеральный округ')
