@@ -18,7 +18,7 @@ class Contact(models.Model):
     ]
 
     title = models.CharField(max_length=255, verbose_name='Название')
-    inn = models.PositiveBigIntegerField(verbose_name='ИНН')
+    inn = models.PositiveBigIntegerField(verbose_name='ИНН', unique=True)
     kpp = models.CharField(max_length=255, null=True, blank=True, verbose_name='КПП')
 
     region = models.CharField(choices=regions, null=True, blank=True, max_length=255, verbose_name='Федеральный округ')
